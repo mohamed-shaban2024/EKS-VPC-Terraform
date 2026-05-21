@@ -1,3 +1,4 @@
+########################### الجزء بتاع ال vpc ######################
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.8.1"
@@ -17,9 +18,12 @@ module "vpc" {
   }
 }
 
+########################### الجزء بتاع ال EKS ######################
+
+
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "~> 19.21.0"
+  version = "~> 19.21.0" # كنت عاوز اشوف ال موضوع ال versions دا 
 
   cluster_name    = "mo-eks"
   cluster_version = "1.29"
